@@ -1,0 +1,5 @@
+{
+  "name": "Virtual Smart Wheelchair Monitor",
+  "description": "A simulation of a Velostat-based pressure sensing matrix (15x15) for wheelchair posture monitoring, featuring virtual circuit logic.",
+  "requestFramePermissions": []
+}
