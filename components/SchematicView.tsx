@@ -5,11 +5,10 @@ import { translations } from '../i18n';
 interface SchematicViewProps {
   activeRow: number;
   activeCol: number;
-  activeValue: number;
   lang?: Language;
 }
 
-export const SchematicView: React.FC<SchematicViewProps> = ({ activeRow, activeCol, activeValue, lang = 'en' }) => {
+export const SchematicView: React.FC<SchematicViewProps> = ({ activeRow, activeCol, lang = 'en' }) => {
   const [hoveredComponent, setHoveredComponent] = useState<string | null>(null);
   const [lockedHighlight, setLockedHighlight] = useState<'row' | 'col' | null>(null);
   const t = translations[lang];

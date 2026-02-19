@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hammer, ShoppingCart, Cpu, Code, Layers, AlertTriangle, Lightbulb } from 'lucide-react';
+import { ShoppingCart, Cpu, Code, Layers, AlertTriangle, Lightbulb } from 'lucide-react';
 import { Language } from '../types';
 import { translations } from '../i18n';
 

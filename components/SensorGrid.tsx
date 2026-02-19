@@ -63,7 +63,7 @@ export const SensorGrid: React.FC<SensorGridProps> = ({
     handleInteraction(r, c, 1);
   };
 
-  const handleMouseEnter = (r: number, c: number, e: React.MouseEvent) => {
+  const handleMouseEnter = (r: number, c: number) => {
     if (isDrawing) {
       handleInteraction(r, c, 1);
     }
@@ -103,7 +103,7 @@ export const SensorGrid: React.FC<SensorGridProps> = ({
               <div
                 key={`${r}-${c}`}
                 onMouseDown={(e) => handleMouseDown(r, c, e)}
-                onMouseEnter={(e) => handleMouseEnter(r, c, e)}
+                onMouseEnter={() => handleMouseEnter(r, c)}
                 className={`
                   relative flex items-center justify-center
                   cursor-pointer transition-colors duration-75

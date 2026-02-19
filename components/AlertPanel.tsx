@@ -1,15 +1,14 @@
 import React from 'react';
-import { Alert, Matrix15x15, Language } from '../types';
+import { Alert, Language } from '../types';
 import { translations } from '../i18n';
 import { AlertTriangle, CheckCircle } from 'lucide-react';
 
 interface AlertPanelProps {
   alerts: Alert[];
-  matrix: Matrix15x15;
   lang?: Language;
 }
 
-export const AlertPanel: React.FC<AlertPanelProps> = ({ alerts, matrix, lang = 'en' }) => {
+export const AlertPanel: React.FC<AlertPanelProps> = ({ alerts, lang = 'en' }) => {
   const t = translations[lang];
 
   return (

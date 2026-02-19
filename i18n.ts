@@ -1,5 +1,3 @@
-import { Language } from './types';
-
 export const translations = {
   en: {
     appTitle: "Virtual Smart Wheelchair Monitor",
@@ -112,7 +110,7 @@ export const translations = {
     objectives: "Objectives",
     obj1: "Design a low-cost 15x15 sensor matrix.",
     obj2: "Implement real-time visualization.",
-    obj3: "Validate functioning with different weights.",
+    obj3: "Validar el funcionamiento con diferentes pesos.",
     impact: "Social & Technical Impact",
     impact1Title: "Democratizing Health",
     impact1Desc: "Accessible technology for low-resource homes.",

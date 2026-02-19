@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { SensorGrid } from './components/SensorGrid';
 import { CircuitDiagram } from './components/CircuitDiagram';
 import { HeatmapDisplay } from './components/HeatmapDisplay';
@@ -17,14 +17,15 @@ import {
   Language
 } from './types';
 import { translations } from './i18n';
-import { Activity, Cpu, LayoutDashboard, Zap, Search, Hammer, Info, Globe } from 'lucide-react';
+import { Cpu, LayoutDashboard, Zap, Search, Hammer, Info, Globe } from 'lucide-react';
 
 const INITIAL_MATRIX: Matrix15x15 = Array(MATRIX_SIZE).fill(0).map(() => Array(MATRIX_SIZE).fill(0));
 
 function App() {
   // --- State ---
   const [matrix, setMatrix] = useState<Matrix15x15>(INITIAL_MATRIX);
-  const [isScanning, setIsScanning] = useState(true);
+  // setIsScanning removed because it was unused (TS6133)
+  const [isScanning] = useState(true);
   const [activeTab, setActiveTab] = useState<'monitor' | 'schematic' | 'build' | 'info'>('monitor');
   const [scanSpeed, setScanSpeed] = useState<'analysis' | 'realtime'>('realtime');
   const [lang, setLang] = useState<Language>('en');
@@ -310,7 +311,7 @@ function App() {
                  <DataRecorder matrix={matrix} lang={lang} />
                </section>
                <section className="flex-grow">
-                 <AlertPanel alerts={alerts} matrix={matrix} lang={lang} />
+                 <AlertPanel alerts={alerts} lang={lang} />
                </section>
             </div>
           </div>
@@ -322,7 +323,6 @@ function App() {
              <SchematicView 
                 activeRow={scanRow} 
                 activeCol={scanCol} 
-                activeValue={matrix[scanRow][scanCol]}
                 lang={lang}
              />
           </div>
